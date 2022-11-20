@@ -91,5 +91,17 @@ public class Player : MonoBehaviour
             if (text_[i] == '\n') break;
         }
         if(i > -2) text.GetComponent<InputField>().text = text_.Substring(0, i + 1);
-    }    
+    }
+    public void copy_x()
+    {
+        x_.GetComponent<InputField>().text = x.GetComponent<InputField>().text;
+    }
+    public void copy_y()
+    {
+        y_.GetComponent<InputField>().text = y.GetComponent<InputField>().text;
+    }
+    public void copy_z()
+    {
+        z_.GetComponent<InputField>().text = z.GetComponent<InputField>().text;
+    }
 }
