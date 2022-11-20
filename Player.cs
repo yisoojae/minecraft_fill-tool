@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     }
     public void print()
     {
-        
+        text.GetComponent<InputField>().text += "fill " + x.GetComponent<InputField>().text + " " + y.GetComponent<InputField>().text + " " + z.GetComponent<InputField>().text + " " + x_.GetComponent<InputField>().text + " " + y_.GetComponent<InputField>().text + " " + z_.GetComponent<InputField>().text + " mincraft:" + block.GetComponent<InputField>().text + "\n";
     }
     public void copy()
     {
