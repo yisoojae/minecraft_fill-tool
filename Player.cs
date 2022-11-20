@@ -34,6 +34,12 @@ public class Player : MonoBehaviour
     }
     public void delete()
     {
-
+        string text_ = text.GetComponent<InputField>().text;
+        int i;
+        for(i = text_.Length - 2; 0 <= i; i--)
+        {
+            if (text_[i] == '\n') break;
+        }
+        text.GetComponent<InputField>().text = text_.Substring(0, i + 1);
     }    
 }
