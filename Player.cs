@@ -90,6 +90,6 @@ public class Player : MonoBehaviour
         {
             if (text_[i] == '\n') break;
         }
-        text.GetComponent<InputField>().text = text_.Substring(0, i + 1);
+        if(i > -2) text.GetComponent<InputField>().text = text_.Substring(0, i + 1);
     }    
 }
