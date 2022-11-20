@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
     }
     public void print()
     {
-        
+        text.GetComponent<InputField>().text += "fill " + x.GetComponent<InputField>().text + " " + y.GetComponent<InputField>().text + " " + z.GetComponent<InputField>().text + " " + x_.GetComponent<InputField>().text + " " + y_.GetComponent<InputField>().text + " " + z_.GetComponent<InputField>().text + " mincraft:" + block.GetComponent<InputField>().text + "\n";
     }
     public void copy()
     {
@@ -84,6 +84,12 @@ public class Player : MonoBehaviour
     }
     public void delete()
     {
-
+        string text_ = text.GetComponent<InputField>().text;
+        int i;
+        for(i = text_.Length - 2; 0 <= i; i--)
+        {
+            if (text_[i] == '\n') break;
+        }
+        text.GetComponent<InputField>().text = text_.Substring(0, i + 1);
     }    
 }
