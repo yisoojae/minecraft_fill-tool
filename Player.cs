@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering.VirtualTexturing;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -23,12 +24,34 @@ public class Player : MonoBehaviour
         text = GameObject.FindGameObjectWithTag("text");
         gr = GameObject.FindGameObjectWithTag("Finish").GetComponent<GraphicRaycaster>();
         ped = new PointerEventData(null);
+        x.GetComponent<InputField>().Select();
     }
 
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if(Input.GetKey(KeyCode.LeftShift))
+            {
+                if (y.GetComponent<InputField>().isFocused) x.GetComponent<InputField>().Select();
+                else if (z.GetComponent<InputField>().isFocused) y.GetComponent<InputField>().Select();
+                else if (x_.GetComponent<InputField>().isFocused) z.GetComponent<InputField>().Select();
+                else if (y_.GetComponent<InputField>().isFocused) x_.GetComponent<InputField>().Select();
+                else if (z_.GetComponent<InputField>().isFocused) y_.GetComponent<InputField>().Select();
+                else if (block.GetComponent<InputField>().isFocused) z_.GetComponent<InputField>().Select();
+            }
+            else
+            {
+                if (x.GetComponent<InputField>().isFocused) y.GetComponent<InputField>().Select();
+                else if (y.GetComponent<InputField>().isFocused) z.GetComponent<InputField>().Select();
+                else if (z.GetComponent<InputField>().isFocused) x_.GetComponent<InputField>().Select();
+                else if (x_.GetComponent<InputField>().isFocused) y_.GetComponent<InputField>().Select();
+                else if (y_.GetComponent<InputField>().isFocused) z_.GetComponent<InputField>().Select();
+                else if (z_.GetComponent<InputField>().isFocused) block.GetComponent<InputField>().Select();
+            }
+        }
         if (Input.GetAxis("Mouse ScrollWheel") != 0)
         {
             int a;
