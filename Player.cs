@@ -44,31 +44,45 @@ public class Player : MonoBehaviour
                 if (results[i].gameObject.tag.Equals("x"))
                 {
                     x.GetComponent<InputField>().text = (int.Parse(x.GetComponent<InputField>().text) + a).ToString();
+                    if (Input.GetKey(KeyCode.LeftControl)) z.GetComponent<InputField>().text = (int.Parse(z.GetComponent<InputField>().text) + a).ToString();
                     break;
                 }
                 else if (results[i].gameObject.tag.Equals("y"))
                 {
                     y.GetComponent<InputField>().text = (int.Parse(y.GetComponent<InputField>().text) + a).ToString();
+                    if (Input.GetKey(KeyCode.LeftControl))
+                    {
+                        x.GetComponent<InputField>().text = (int.Parse(x.GetComponent<InputField>().text) + a).ToString();
+                        z.GetComponent<InputField>().text = (int.Parse(z.GetComponent<InputField>().text) + a).ToString();
+                    }
                     break;
                 }
                 else if (results[i].gameObject.tag.Equals("z"))
                 {
                     z.GetComponent<InputField>().text = (int.Parse(z.GetComponent<InputField>().text) + a).ToString();
+                    if (Input.GetKey(KeyCode.LeftControl)) x.GetComponent<InputField>().text = (int.Parse(x.GetComponent<InputField>().text) + a).ToString();
                     break;
                 }
                 else if (results[i].gameObject.tag.Equals("x_"))
                 {
                     x_.GetComponent<InputField>().text = (int.Parse(x_.GetComponent<InputField>().text) + a).ToString();
+                    if (Input.GetKey(KeyCode.LeftControl)) z_.GetComponent<InputField>().text = (int.Parse(z_.GetComponent<InputField>().text) + a).ToString();
                     break;
                 }
                 else if (results[i].gameObject.tag.Equals("y_"))
                 {
                     y_.GetComponent<InputField>().text = (int.Parse(y_.GetComponent<InputField>().text) + a).ToString();
+                    if (Input.GetKey(KeyCode.LeftControl))
+                    {
+                        x_.GetComponent<InputField>().text = (int.Parse(x_.GetComponent<InputField>().text) + a).ToString();
+                        z_.GetComponent<InputField>().text = (int.Parse(z_.GetComponent<InputField>().text) + a).ToString();
+                    }
                     break;
                 }
                 else if (results[i].gameObject.tag.Equals("z_"))
                 {
                     z_.GetComponent<InputField>().text = (int.Parse(z_.GetComponent<InputField>().text) + a).ToString();
+                    if (Input.GetKey(KeyCode.LeftControl)) x_.GetComponent<InputField>().text = (int.Parse(x_.GetComponent<InputField>().text) + a).ToString();
                     break;
                 }
             }
