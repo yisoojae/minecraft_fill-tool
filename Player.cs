@@ -118,4 +118,10 @@ public class Player : MonoBehaviour
     {
         z_.GetComponent<InputField>().text = z.GetComponent<InputField>().text;
     }
+    public void copy_all()
+    {
+        x_.GetComponent<InputField>().text = x.GetComponent<InputField>().text;
+        y_.GetComponent<InputField>().text = y.GetComponent<InputField>().text;
+        z_.GetComponent<InputField>().text = z.GetComponent<InputField>().text;
+    }
 }
